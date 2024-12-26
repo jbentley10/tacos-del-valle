@@ -1,6 +1,6 @@
 "use client";
 
-import { Antonio, Inter } from "next/font/google";
+import { Antonio, Inter, Kablammo } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Navigation } from "../components/navigation";
@@ -9,6 +9,7 @@ import { Footer } from "../components/footer";
 // Declare fonts
 const antonio = Antonio({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
+const kablammo = Kablammo({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -21,7 +22,10 @@ export default function RootLayout({
         h1,
         h2,
         h3,
-        h4,
+        h4 {
+          font-family: ${kablammo.style.fontFamily};
+        }
+
         button,
         span,
         .antonio {
