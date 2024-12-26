@@ -2,6 +2,7 @@
  * @file page.tsx
  */
 // Import components and utils
+import TacoTransition from "@/components/taco-transition";
 import { fetchBlocksBySlug } from "../lib/contentfulData";
 import Content from "./content";
 import { ChevronDown } from 'lucide-react'
@@ -10,8 +11,8 @@ import Link from "next/link"
 
 // Set metadata
 export const metadata = {
-  title: "Home | Example app",
-  description: "This app uses NextJS and Contentful.",
+  title: "Home | Tacos del Valle",
+  description: "Taqueria and taco shop serving Cathedral City, CA.",
 };
 
 export default async function Home() {
@@ -55,25 +56,58 @@ export default async function Home() {
       {/* Menu Section */}
       <section id="menu" className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-4xl font-bold text-[#C0392B]">Our Menu</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: "Tacos", price: "$3.50", description: "Choose from our variety of authentic fillings" },
-              { title: "Burritos", price: "$8.99", description: "Loaded with your choice of meat and toppings" },
-              { title: "Quesadillas", price: "$7.99", description: "Melted cheese with your favorite ingredients" },
-              { title: "Loaded Nachos", price: "$10.99", description: "Topped with cheese, meat, and fresh vegetables" },
-              { title: "Tortas", price: "$9.99", description: "Traditional Mexican sandwiches" },
-              { title: "Platillo", price: "$12.99", description: "Complete meal with rice and beans" },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:-translate-y-1"
-              >
-                <h3 className="mb-2 text-xl font-bold text-[#C0392B]">{item.title}</h3>
-                <p className="mb-4 text-gray-600">{item.description}</p>
-                <p className="text-lg font-bold text-[#C0392B]">{item.price}</p>
+          <h2 className="mb-12 text-center text-4xl font-bold text-[hsl(4,63%,46%)]">Our Menu</h2>
+          <div className="space-y-16">
+            {/* Choose Your Passion */}
+            <div className="bg-white p-8 shadow-lg">
+              <div className="mb-8 flex items-center">
+                <span className="mr-4 text-6xl font-bold text-[hsl(4,63%,46%)]">1</span>
+                <h3 className="text-3xl font-bold text-[hsl(4,63%,46%)]">Choose Your Passion</h3>
               </div>
-            ))}
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {[
+                  { title: "Tacos", price: "$3.50", description: "Served on a handmade corn tortilla & stuffed with choice of meat, topped with onion & cilantro." },
+                  { title: "Tortas", price: "$9.99", description: "A Mexican sandwich served on a toasted bolillo & filled with choice of meat, beans, topped with crema, monterrey cheese, avocade, onion, cilantro, lettuce & tomato." },
+                  { title: "Burritos", price: "$8.99", description: "A flour tortilla wrapped around your choice of meat, rice, beans, crema, avocado, onion & cilantro." },
+                  { title: "Quesadillas", price: "$7.99", description: "A flour tortilla filled with melted cheese & your choice of meat. (Onion & cilantro optional)" },
+                  { title: "Loaded Nachos", price: "$10.99", description: "Crispy tortilla chips topped with monterrey & house nacho cheese, your choice of meat, crema, avocado, onion & cilantro. (Beans optional)" },
+                  { title: "Loaded Fries", price: "$10.99", description: "Fresh cut homestyle fries topped with monterrey & house nacho cheese, your choice of meat, crema, avocado, onion & cilantro. (Beans optional)" },
+                  { title: "Platillo", price: "$10.99", description: "A traditional Mexican combination plate, served with your choice of meat, rice, beans, onions & cilantro." },
+                ].map((item) => (
+                  <div key={item.name} className="rounded-lg border border-gray-200 p-6">
+                    <h4 className="mb-2 text-xl font-semibold text-[hsl(4,63%,46%)]">{item.name}</h4>
+                    <p className="mb-4 text-gray-600">{item.description}</p>
+                    <p className="text-lg font-bold text-[hsl(4,63%,46%)]">{item.price}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Choose Your Meat */}
+            <div className="bg-white p-8 shadow-lg">
+              <div className="mb-8 flex items-center">
+                <span className="mr-4 text-6xl font-bold text-[hsl(4,63%,46%)]">2</span>
+                <h3 className="text-3xl font-bold text-[hsl(4,63%,46%)]">Choose Your Meat</h3>
+              </div>
+              <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {["Carne Asada", "Pollo", "Al Pastor", "Carnitas", "Chorizo", "Barbacoa"].map((item) => (
+                  <li key={item} className="text-lg text-gray-700">{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Choose Your Side */}
+            <div className="bg-white p-8 shadow-lg">
+              <div className="mb-8 flex items-center">
+                <span className="mr-4 text-6xl font-bold text-[hsl(4,63%,46%)]">3</span>
+                <h3 className="text-3xl font-bold text-[hsl(4,63%,46%)]">Choose Your Side</h3>
+              </div>
+              <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {["Mexican Rice", "Refried Beans", "Black Beans", "Fries", "Guacamole", "Pico de Gallo"].map((item) => (
+                  <li key={item} className="text-lg text-gray-700">{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -95,6 +129,8 @@ export default async function Home() {
         </div>
       </section>
 
+      <TacoTransition />
+
       {/* Contact Section */}
       <section id="contact" className="py-20">
         <div className="container mx-auto px-4">
@@ -102,19 +138,18 @@ export default async function Home() {
           <div className="mx-auto max-w-2xl rounded-lg bg-white p-8 shadow-lg">
             <div className="mb-6 text-center">
               <p className="mb-2 text-lg font-semibold text-[#C0392B]">Visit Us</p>
-              <p className="text-gray-600">123 Taco Street</p>
-              <p className="text-gray-600">Los Angeles, CA 90012</p>
+              <p className="text-gray-600">68467 E Palm Canyon Dr</p>
+              <p className="text-gray-600">Cathedral City, CA 92234</p>
             </div>
             <div className="mb-6 text-center">
               <p className="mb-2 text-lg font-semibold text-[#C0392B]">Hours</p>
-              <p className="text-gray-600">Monday - Thursday: 11am - 9pm</p>
-              <p className="text-gray-600">Friday - Saturday: 11am - 11pm</p>
-              <p className="text-gray-600">Sunday: 11am - 8pm</p>
+              <p className="text-gray-600">Monday: 8am - 4pm</p>
+              <p className="text-gray-600">Tuesday - Saturday: 8am - 8:30pm</p>
+              <p className="text-gray-600">Sunday: 8am - 3pm</p>
             </div>
             <div className="text-center">
               <p className="mb-2 text-lg font-semibold text-[#C0392B]">Contact</p>
-              <p className="text-gray-600">Phone: (555) 123-4567</p>
-              <p className="text-gray-600">Email: info@tacosdelvalle.com</p>
+              <p className="text-gray-600">Phone: (760) 424-8444</p>
             </div>
           </div>
         </div>
