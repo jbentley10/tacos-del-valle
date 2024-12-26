@@ -23,13 +23,6 @@ export default async function Home() {
 
   return (
     <main className='flex flex-col items-center justify-between lg:p-24 xs:p-4'>
-      {english && spanish && (
-        // <Content
-        //   key={Math.random()}
-        //   englishBlocks={english}
-        //   spanishBlocks={spanish}
-        // />
-      )}
       {/* Hero Section */}
       <section className="relative bg-[#F4D03F] py-20">
         <div className="container mx-auto px-4">
