@@ -41,10 +41,12 @@ export default function RootLayout({
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
       <body>
-        <Navigation />
-        {children}
-        <Analytics />
-        <Footer />
+        <div className="min-h-screen bg-[#F4D03F]/10">
+          <Navigation />
+          {children}
+          <Analytics />
+          <Footer />
+          </div>
       </body>
     </html>
   );
