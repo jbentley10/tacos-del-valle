@@ -29,6 +29,7 @@ export default async function Home() {
         //   englishBlocks={english}
         //   spanishBlocks={spanish}
         // />
+      )}
       {/* Hero Section */}
       <section className="relative bg-[#F4D03F] py-20">
         <div className="container mx-auto px-4">
@@ -125,8 +126,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      )}
-      ;
     </main>
   );
 }
