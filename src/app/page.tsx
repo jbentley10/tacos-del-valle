@@ -4,7 +4,6 @@
 // Import components and utils
 import TacoTransition from "@/components/taco-transition";
 import { fetchBlocksBySlug } from "../lib/contentfulData";
-import { ChevronDown } from "lucide-react";
 import { Hero } from "@/components/hero";
 
 // Set metadata

@@ -10,7 +10,6 @@ export { Heading } from "./src/components/heading";
 export { Footer } from "./src/components/footer";
 export type { HeadingProps } from "./src/components/heading";
 export { Hero } from "./src/components/hero";
-export type { HeroProps } from "./src/components/hero";
 export { ImageTextBlock } from "./src/components/image-text-block";
 export type { ImageTextBlockProps } from "./src/components/image-text-block";
 export { Navigation } from "./src/components/navigation";
