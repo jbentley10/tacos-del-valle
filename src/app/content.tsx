@@ -23,12 +23,7 @@ const blockByType = (block: any) => {
   switch (contentType) {
     case "HeroBlock":
       return (
-        <Hero
-          heading={block.heading}
-          subheading={block.subheading}
-          buttonLink={block.buttonLink}
-          buttonText={block.buttonText}
-        />
+        <Hero/>
       );
 
     case "DividerTextBlock":
