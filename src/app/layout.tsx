@@ -1,6 +1,6 @@
 "use client";
 
-import { Antonio, Inter, Kablammo, Ranchers } from "next/font/google";
+import { Antonio, Inter, Ranchers } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Navigation } from "../components/navigation";
@@ -9,7 +9,6 @@ import { Footer } from "../components/footer";
 // Declare fonts
 const antonio = Antonio({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
-const kablammo = Kablammo({ subsets: ["latin"] });
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 export default function RootLayout({
